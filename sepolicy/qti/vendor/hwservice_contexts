@@ -12,3 +12,6 @@ vendor.somc.hardware.nfc::ISomcNfc                                u:object_r:hal
 vendor.somc.hardware.radio::ISomcHook                             u:object_r:somc_hw_radio_hwservice:s0
 vendor.somc.hardware.security.secd::IDeviceSecurity               u:object_r:vendor_hal_secd_hwservice:s0
 vendor.somc.hardware.swiqi::IHidlSwiqi                            u:object_r:hal_swiqi_hwservice:s0
+vendor.dolby.hardware.dms::IDms                                   u:object_r:hal_dms_hwservice:s0
+vendor.dolby_v3_6.hardware.dms360::IDms                           u:object_r:hal_dms_hwservice:s0
+vendor.dolby_sp.hardware.dmssp::IDms                              u:object_r:hal_dms_hwservice:s0
