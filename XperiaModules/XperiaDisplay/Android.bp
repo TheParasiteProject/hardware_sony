@@ -12,6 +12,11 @@ android_app {
     system_ext_specific: true,
     privileged: true,
 
+    libs: [
+        "framework",
+        "services",
+    ],
+
     static_libs: [
         "XperiaModulesDefaultLib",
         "vendor.semc.hardware.display-V2.0-java",
