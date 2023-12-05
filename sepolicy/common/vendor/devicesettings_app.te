@@ -1,0 +1,6 @@
+allow devicesettings_app {
+    sysfs_dm
+    sysfs_thermal
+    vendor_sysfs_graphics
+    vendor_sysfs_kgsl
+}:{ file lnk_file } rw_file_perms;
