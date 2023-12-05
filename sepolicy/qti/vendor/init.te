@@ -1,4 +1,5 @@
 allow init { idd_root_dir idd_rca_dir }:dir mounton;
 
+allow init sysfs_dm:file setattr;
 allow init sysfs_tsp:file rw_file_perms;
 allow init vendor_sysfs_graphics:{ file lnk_file } r_file_perms;

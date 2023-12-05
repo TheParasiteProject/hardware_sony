@@ -11,11 +11,19 @@ android_app {
 
     static_libs: [
         "androidx.core_core",
+        "androidx.core_core-ktx",
         "androidx.preference_preference",
+        "org.lineageos.settings.resources",
         "org.lineageos.platform.internal",
+        "SettingsLib",
         "vendor.semc.hardware.display-V2.0-java",
         "vendor.semc.hardware.display-V2.1-java",
         "vendor.semc.hardware.display-V2.2-java",
+    ],
+
+    libs: [
+        "framework",
+        "services",
     ],
 
     optimize: {

@@ -5,11 +5,20 @@
     <string name="display_setting_header">Advanced Display Setting</string>
     <string name="display_setting_summary">Adjust various display settings</string>
 
-    <!-- Creator Mode Related Settings -->
-    <string name="cm_display_header">Creator Mode Settings</string>
-    <string name="cm_switch_title">Enable/Disable Creator Mode</string>
-    <string name="cm_switch_description">Enables the BT.2020 Color Gamut and 10-bit Color</string>
-    <string name="cm_footer_string">LiveDisplay\'s color calibration configs will be overridden by Creator Mode.</string>
+    <!-- Display Settings -->
+    <string name="cm_display_header">Color Gamut and Contrast</string>
+    <string name="cm_switch_title">Creator Mode</string>
+    <string name="cm_switch_description">Provide a faithful reproduction of the creator\'s intended vision through high definition display and specially developed image processing compatible with BT.2020 color gamut and 10-bit color of HDR specification.</string>
+    <string name="cm_footer_string">Apps that support a wide color gamut will automatically be shown in their original colors.\n\n\nHDR videos in fullscreen mode will be automatically displayed with Creator Mode.</string>
+
+    <!-- Creator Mode Preview Images -->
+    <string name="creator_mode_content_description" translatable="false">Color Preview</string>
+
+    <!-- Creator Mode Previous Image Button -->
+    <string name="creator_mode_previous" translatable="false">Previous</string>
+
+    <!-- Creator Mode Next Image Button -->
+    <string name="creator_mode_next" translatable="false">Next</string>
 
     <!-- Dialog Related Strings -->
     <string name="cm_dialog_title">Creator Mode</string>
