@@ -17,8 +17,8 @@
             android:summary="@string/dolby_summary"
             android:persistent="false">
             <intent
-                android:targetPackage="com.xperia.settings.dolby"
-                android:targetClass="com.xperia.settings.dolby.DolbyActivity" />
+                android:targetPackage="com.dolby.daxappui"
+                android:targetClass="com.dolby.daxappui.MainActivity" />
         </Preference>
 
         <Preference
