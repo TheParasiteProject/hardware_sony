@@ -47,7 +47,6 @@ endif
 ifeq ($(TARGET_SUPPORTS_SOUND_ENHANCEMENT),true)
 PRODUCT_PACKAGES += \
     XperiaAudio \
-    XperiaDolby \
     XperiaTSRA
 endif
 
