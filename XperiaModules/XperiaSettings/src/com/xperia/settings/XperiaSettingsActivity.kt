@@ -8,7 +8,7 @@ package com.xperia.settings
 
 import android.os.Bundle
 import com.android.settingslib.collapsingtoolbar.CollapsingToolbarBaseActivity
-import com.android.settingslib.widget.R
+import com.android.settingslib.collapsingtoolbar.R
 
 class XperiaSettingsActivity : CollapsingToolbarBaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
