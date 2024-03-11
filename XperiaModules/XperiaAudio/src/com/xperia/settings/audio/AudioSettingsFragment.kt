@@ -20,7 +20,7 @@ class AudioSettingsFragment : PreferenceFragmentCompat(), Preference.OnPreferenc
         yourPreference?.onPreferenceChangeListener = this
     }
 
-    override fun onPreferenceChange(preference: Preference?, newValue: Any?): Boolean {
+    override fun onPreferenceChange(preference: Preference, newValue: Any): Boolean {
         return true
     }
 }
