@@ -14,11 +14,10 @@
         app:iconSpaceReserved="false"
         app:title="@string/display_cm_header">
 
-        <SwitchPreference app:key="switchCreatorMode"
-                          app:iconSpaceReserved="false"
-                          app:title="@string/display_cm_enable"
-                          app:summary="@string/display_cm_summary"
-        />
+        <SwitchPreferenceCompat
+            app:key="switchCreatorMode"
+            android:title="@string/display_cm_enable"
+            android:summary="@string/display_cm_summary" />
     </PreferenceCategory>
 
     <com.android.settingslib.widget.FooterPreference
