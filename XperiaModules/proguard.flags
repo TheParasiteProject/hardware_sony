@@ -3,6 +3,6 @@
 }
 
 -keep class ** extends androidx.preference.PreferenceFragment
--keep class com.xperia.audio.* {
+-keep class com.xperia.settings.* {
   *;
 }

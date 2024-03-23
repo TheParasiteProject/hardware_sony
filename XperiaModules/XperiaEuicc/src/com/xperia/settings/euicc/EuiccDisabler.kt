@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.xperia.euicc
+package com.xperia.settings.euicc
 
 import android.content.Context
 import android.content.pm.ApplicationInfo
