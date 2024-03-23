@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- App Name -->
+    <string name="app_name" translatable="true">Xperia Power</string>
+
+    <!-- Power -->
+    <string name="power_menu_title">Power Settings</string>
+    <string name="powershare_mode_title">Power Share</string>
+    <string name="powershare_mode_summary">Enable reverse wireless charging</string>
+    <string name="powershare_mode_disabled_summary">Disabled due to Battery saver mode</string>
+</resources>

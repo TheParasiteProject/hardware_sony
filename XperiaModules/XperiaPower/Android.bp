@@ -1,0 +1,34 @@
+android_app {
+    name: "XperiaPower",
+
+    srcs: [
+        "src/**/*.java",
+        "src/**/*.kt",
+    ],
+    resource_dirs: ["res"],
+
+    certificate: "platform",
+    platform_apis: true,
+    system_ext_specific: true,
+    privileged: true,
+
+    static_libs: [
+        "androidx.core_core",
+        "androidx.preference_preference",
+    ],
+
+    optimize: {
+        proguard_flags_files: ["proguard.flags"],
+    },
+
+    required: [
+        "init.xperiapower.rc",
+    ],
+}
+
+prebuilt_etc {
+    name: "init.xperiapower.rc",
+    src: "init/init.xperiapower.rc",
+    sub_dir: "init",
+    vendor: true
+}
