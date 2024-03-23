@@ -1,0 +1,19 @@
+android_library {
+    name: "XperiaModulesDefaultLib",
+
+    defaults: [
+        "SettingsLibDefaults",
+    ],
+
+    static_libs: [
+        "androidx.core_core-ktx",
+        "androidx.core_core",
+        "androidx.preference_preference",
+        "SettingsLib",
+    ],
+}
+
+filegroup {
+    name: "XperiaModules_proguard_flags",
+    srcs: ["proguard.flags"],
+}

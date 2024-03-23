@@ -1,8 +1,10 @@
 android_app {
     name: "XperiaDisplay",
-    defaults: ["SettingsLibDefaults"],
 
-    srcs: ["src/**/*.kt"],
+    srcs: [
+        "src/**/*.java",
+        "src/**/*.kt",
+    ],
     resource_dirs: ["res"],
 
     certificate: "platform",
@@ -11,15 +13,13 @@ android_app {
     privileged: true,
 
     static_libs: [
-        "androidx.core_core",
-        "androidx.preference_preference",
-        "androidx.core_core-ktx",
+        "XperiaModulesDefaultLib",
         "vendor.semc.hardware.display-V2.0-java",
         "vendor.semc.hardware.display-V2.1-java",
         "vendor.semc.hardware.display-V2.2-java",
     ],
 
     optimize: {
-        proguard_flags_files: ["proguard.flags"],
+        proguard_flags_files: [":XperiaModules_proguard_flags"],
     },
 }
