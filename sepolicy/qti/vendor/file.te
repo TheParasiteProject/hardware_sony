@@ -16,4 +16,5 @@ type sysfs_tof_rgbcir, fs_type, sysfs_type;
 type sysfs_torch_brightness, fs_type, sysfs_type;
 type sysfs_tsp, fs_type, sysfs_type;
 type sysfs_uim_ctrl, fs_type, sysfs_type;
+type sysfs_wls_boost, fs_type, sysfs_type;
 type tad_socket, file_type;

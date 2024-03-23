@@ -3,3 +3,4 @@ user=system seinfo=platform name=com.xperia.settings domain=devicesetting_app ty
 user=system seinfo=platform name=com.xperia.settings.audio domain=devicesetting_app type=system_app_data_file
 user=system seinfo=platform name=com.xperia.settings.dolby domain=devicesetting_app type=system_app_data_file
 user=system seinfo=platform name=com.xperia.settings.switcher domain=devicesetting_app type=system_app_data_file
+user=system seinfo=platform name=com.xperia.settings.power domain=devicesetting_app type=system_app_data_file

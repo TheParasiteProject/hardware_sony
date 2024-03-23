@@ -18,6 +18,8 @@ class XperiaSettingsPackage(private val fragment: PreferenceFragmentCompat) {
     private val pm = fragment.activity?.packageManager
     private val displayPackageName = "com.xperia.settings.display"
     private val displayClassName = "com.xperia.settings.display.DisplaySettingsActivity"
+    private val powerPackageName = "com.xperia.settings.power"
+    private val powerClassName = "com.xperia.settings.power.PowerSettingsActivity"
     private val audioPackageName = "com.xperia.settings.audio"
     private val audioClassName = "com.xperia.settings.audio.AudioSettingsActivity"
     private val extmonPackageName = "com.sonymobile.extmonitorapp"
@@ -47,6 +49,30 @@ class XperiaSettingsPackage(private val fragment: PreferenceFragmentCompat) {
             // Package does not exist, set preference to hidden
             val category = fragment.findPreference<PreferenceCategory>("display")
             fragment.findPreference<Preference>("display_settings")?.isVisible = false
+            category?.isVisible = false
+        }
+    }
+
+    fun setupPowerSettings() {
+        try {
+            val packageInfo = pm?.getPackageInfo(powerPackageName, PackageManager.GET_ACTIVITIES)
+            if (packageInfo != null && PackageInfoCompat.getLongVersionCode(packageInfo) >= 1) {
+                // Package exists and has a version code greater than or equal to 1, set preference to visible
+                fragment.findPreference<Preference>("power_settings")?.isVisible = true
+                val intent = Intent().apply {
+                    setClassName(powerPackageName, powerClassName)
+                }
+                fragment.findPreference<Preference>("power_settings")?.intent = intent
+            } else {
+                // Package does not exist or has a version code less than 1, set preference to hidden
+                val category = fragment.findPreference<PreferenceCategory>("power")
+                fragment.findPreference<Preference>("power_settings")?.isVisible = false
+                category?.isVisible = false
+            }
+        } catch (e: PackageManager.NameNotFoundException) {
+            // Package does not exist, set preference to hidden
+            val category = fragment.findPreference<PreferenceCategory>("power")
+            fragment.findPreference<Preference>("power_settings")?.isVisible = false
             category?.isVisible = false
         }
     }

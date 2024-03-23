@@ -26,6 +26,24 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="power"
+        android:title="@string/power_title">
+
+       <Preference
+            android:key="power_settings"
+            android:icon="@drawable/ic_power_settings"
+            android:title="@string/power_settings_title"
+            android:summary="@string/power_settings_summary"
+            android:persistent="false">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.xperia.settings.power"
+                android:targetClass="com.xperia.settings.power.PowerSettingsActivity" />
+        </Preference>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="sound"
         android:title="@string/sound_title">
 

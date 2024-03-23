@@ -29,6 +29,11 @@
     <string name="audio_settings_title">Audio Settings</string>
     <string name="audio_settings_summary">Elevate your sound quality with the Dolby Sound EQ and 360 Reality Audio Upmix for a remarkable and immersive audio playback experience</string>
 
+    <!-- Power Settings -->
+    <string name="power_title">Power</string>
+    <string name="power_settings_title">Power Settings</string>
+    <string name="power_settings_summary">Use enhanced power features</string>
+
     <!-- USB Section | External Monitor -->
     <string name="usb_title">USB</string>
     <string name="usb_em_title">External Monitor</string>
