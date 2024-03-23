@@ -1,6 +1,5 @@
 android_app {
     name: "XperiaSettings",
-    defaults: ["SettingsLibDefaults"],
 
     srcs: [
         "src/**/*.java",
@@ -14,11 +13,10 @@ android_app {
     privileged: true,
 
     static_libs: [
-        "androidx.core_core",
-        "androidx.preference_preference",
+        "XperiaModulesDefaultLib",
     ],
 
     optimize: {
-        proguard_flags_files: ["proguard.flags"],
+        proguard_flags_files: [":XperiaModules_proguard_flags"],
     },
 }
