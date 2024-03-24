@@ -1,6 +1,8 @@
 android_library {
     name: "XperiaModulesDefaultLib",
 
+    resource_dirs: ["res"],
+
     defaults: [
         "SettingsLibDefaults",
     ],
