@@ -16,157 +16,27 @@ import com.xperia.settings.R
  
 class XperiaSettingsPackage(private val fragment: PreferenceFragmentCompat) {
     private val pm = fragment.activity?.packageManager
-    private val displayPackageName = "com.xperia.settings.display"
-    private val displayClassName = "com.xperia.settings.display.DisplaySettingsActivity"
-    private val powerPackageName = "com.xperia.settings.power"
-    private val powerClassName = "com.xperia.settings.power.PowerSettingsActivity"
-    private val audioPackageName = "com.xperia.settings.audio"
-    private val audioClassName = "com.xperia.settings.audio.AudioSettingsActivity"
-    private val extmonPackageName = "com.sonymobile.extmonitorapp"
-    private val extmonClassName = "com.sonymobile.extmonitorapp.settings.SettingsAppLauncherActivity"
-    private val usbaPackageName = "jp.co.sony.mc.usbextoutaudio"
-    private val usbaClassName = "jp.co.sony.mc.usbextoutaudio.AudioSettingsActivity"
-    private val dsmPackageName = "com.sonymobile.dualshockmanager"
-    private val dsmClassName = "com.sonymobile.dualshockmanager.Ds4SetUpActivity"
 
-    fun setupDisplaySettings() {
+    fun setupSettings(packageName: String, className: String, categName: String, prefName: String) {
         try {
-            val packageInfo = pm?.getPackageInfo(displayPackageName, PackageManager.GET_ACTIVITIES)
+            val packageInfo = pm?.getPackageInfo(packageName, PackageManager.GET_ACTIVITIES)
             if (packageInfo != null && PackageInfoCompat.getLongVersionCode(packageInfo) >= 1) {
                 // Package exists and has a version code greater than or equal to 1, set preference to visible
-                fragment.findPreference<Preference>("display_settings")?.isVisible = true
+                fragment.findPreference<Preference>(prefName)?.isVisible = true
                 val intent = Intent().apply {
-                    setClassName(displayPackageName, displayClassName)
+                    setClassName(packageName, className)
                 }
-                fragment.findPreference<Preference>("display_settings")?.intent = intent
+                fragment.findPreference<Preference>(prefName)?.intent = intent
             } else {
                 // Package does not exist or has a version code less than 1, set preference to hidden
-                val category = fragment.findPreference<PreferenceCategory>("display")
-                fragment.findPreference<Preference>("display_settings")?.isVisible = false
+                val category = fragment.findPreference<PreferenceCategory>(categName)
+                fragment.findPreference<Preference>(prefName)?.isVisible = false
                 category?.isVisible = false
             }
         } catch (e: PackageManager.NameNotFoundException) {
             // Package does not exist, set preference to hidden
-            val category = fragment.findPreference<PreferenceCategory>("display")
-            fragment.findPreference<Preference>("display_settings")?.isVisible = false
-            category?.isVisible = false
-        }
-    }
-
-    fun setupPowerSettings() {
-        try {
-            val packageInfo = pm?.getPackageInfo(powerPackageName, PackageManager.GET_ACTIVITIES)
-            if (packageInfo != null && PackageInfoCompat.getLongVersionCode(packageInfo) >= 1) {
-                // Package exists and has a version code greater than or equal to 1, set preference to visible
-                fragment.findPreference<Preference>("power_settings")?.isVisible = true
-                val intent = Intent().apply {
-                    setClassName(powerPackageName, powerClassName)
-                }
-                fragment.findPreference<Preference>("power_settings")?.intent = intent
-            } else {
-                // Package does not exist or has a version code less than 1, set preference to hidden
-                val category = fragment.findPreference<PreferenceCategory>("power")
-                fragment.findPreference<Preference>("power_settings")?.isVisible = false
-                category?.isVisible = false
-            }
-        } catch (e: PackageManager.NameNotFoundException) {
-            // Package does not exist, set preference to hidden
-            val category = fragment.findPreference<PreferenceCategory>("power")
-            fragment.findPreference<Preference>("power_settings")?.isVisible = false
-            category?.isVisible = false
-        }
-    }
-
-    fun setupAudioSettings() {
-        try {
-            val packageInfo = pm?.getPackageInfo(audioPackageName, PackageManager.GET_ACTIVITIES)
-            if (packageInfo != null && PackageInfoCompat.getLongVersionCode(packageInfo) >= 1) {
-                // Package exists and has a version code greater than or equal to 1, set preference to visible
-                fragment.findPreference<Preference>("audio_settings")?.isVisible = true
-                val intent = Intent().apply {
-                    setClassName(audioPackageName, audioClassName)
-                }
-                fragment.findPreference<Preference>("audio_settings")?.intent = intent
-            } else {
-                // Package does not exist or has a version code less than 1, set preference to hidden
-                val category = fragment.findPreference<PreferenceCategory>("sound")
-                fragment.findPreference<Preference>("audio_settings")?.isVisible = false
-                category?.isVisible = false
-            }
-        } catch (e: PackageManager.NameNotFoundException) {
-            // Package does not exist, set preference to hidden
-            val category = fragment.findPreference<PreferenceCategory>("sound")
-            fragment.findPreference<Preference>("audio_settings")?.isVisible = false
-            category?.isVisible = false
-        }
-    }
-
-    fun setupExtMonSettings() {
-        try {
-            val packageInfo = pm?.getPackageInfo(extmonPackageName, PackageManager.GET_ACTIVITIES)
-            if (packageInfo != null && PackageInfoCompat.getLongVersionCode(packageInfo) >= 1) {
-                // Package exists and has a version code greater than or equal to 1, set preference to visible
-                fragment.findPreference<Preference>("usb_extmon_settings")?.isVisible = true
-                val intent = Intent().apply {
-                    setClassName(extmonPackageName, extmonClassName)
-                }
-                fragment.findPreference<Preference>("usb_extmon_settings")?.intent = intent
-            } else {
-                // Package does not exist or has a version code less than 1, set preference to hidden
-                val category = fragment.findPreference<PreferenceCategory>("usb")
-                fragment.findPreference<Preference>("usb_extmon_settings")?.isVisible = false
-                category?.isVisible = false
-            }
-        } catch (e: PackageManager.NameNotFoundException) {
-            // Package does not exist, set preference to hidden
-            val category = fragment.findPreference<PreferenceCategory>("usb")
-            fragment.findPreference<Preference>("usb_extmon_settings")?.isVisible = false
-            category?.isVisible = false
-        }
-    }
-    fun setupUSBASettings() {
-        try {
-            val packageInfo = pm?.getPackageInfo(usbaPackageName, PackageManager.GET_ACTIVITIES)
-            if (packageInfo != null && PackageInfoCompat.getLongVersionCode(packageInfo) >= 1) {
-                // Package exists and has a version code greater than or equal to 1, set preference to visible
-                fragment.findPreference<Preference>("usb_audio_settings")?.isVisible = true
-                val intent = Intent().apply {
-                    setClassName(usbaPackageName, usbaClassName)
-                }
-                fragment.findPreference<Preference>("usb_audio_settings")?.intent = intent
-            } else {
-                // Package does not exist or has a version code less than 1, set preference to hidden
-                val category = fragment.findPreference<PreferenceCategory>("usb")
-                fragment.findPreference<Preference>("usb_audio_settings")?.isVisible = false
-                category?.isVisible = false
-            }
-        } catch (e: PackageManager.NameNotFoundException) {
-            // Package does not exist, set preference to hidden
-            val category = fragment.findPreference<PreferenceCategory>("usb")
-            fragment.findPreference<Preference>("usb_audio_settings")?.isVisible = false
-            category?.isVisible = false
-        }
-    }
-    fun setupDSMSettings() {
-        try {
-            val packageInfo = pm?.getPackageInfo(dsmPackageName, PackageManager.GET_ACTIVITIES)
-            if (packageInfo != null && PackageInfoCompat.getLongVersionCode(packageInfo) >= 1) {
-                // Package exists and has a version code greater than or equal to 1, set preference to visible
-                fragment.findPreference<Preference>("dsm_settings")?.isVisible = true
-                val intent = Intent().apply {
-                    setClassName(dsmPackageName, dsmClassName)
-                }
-                fragment.findPreference<Preference>("dsm_settings")?.intent = intent
-            } else {
-                // Package does not exist or has a version code less than 1, set preference to hidden
-                val category = fragment.findPreference<PreferenceCategory>("gaming")
-                fragment.findPreference<Preference>("dsm_settings")?.isVisible = false
-                category?.isVisible = false
-            }
-        } catch (e: PackageManager.NameNotFoundException) {
-            // Package does not exist, set preference to hidden
-            val category = fragment.findPreference<PreferenceCategory>("gaming")
-            fragment.findPreference<Preference>("dsm_settings")?.isVisible = false
+            val category = fragment.findPreference<PreferenceCategory>(categName)
+            fragment.findPreference<Preference>(prefName)?.isVisible = false
             category?.isVisible = false
         }
     }
