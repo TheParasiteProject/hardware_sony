@@ -13,7 +13,10 @@ import android.util.Log
 class BootCompletedReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {
         Log.d(TAG, "Starting")
-        CreatorModeUtils(context).initialize()
+        try {
+            CreatorModeUtils(context).initialize()
+        } catch (e: Exception) {
+        }
     }
 
     companion object {
