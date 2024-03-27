@@ -36,11 +36,13 @@ class CreatorModeUtils(private val context: Context) : IDisplayCallback.Stub() {
     }
 
     fun initialize() {
-        Log.e(TAG, "Creator Mode controller setup")
-
-        // Register itself as callback for HIDL
-        semcDisplayService.registerCallback(this)
-        semcDisplayService.setup()
+        Log.i(TAG, "Creator Mode controller setup")
+        try {
+            // Register itself as callback for HIDL
+            semcDisplayService.registerCallback(this)
+            semcDisplayService.setup()
+        } catch (e: Exception) {
+        }
     }
 
     override fun onWhiteBalanceMatrixChanged(matrix: PccMatrix) {
