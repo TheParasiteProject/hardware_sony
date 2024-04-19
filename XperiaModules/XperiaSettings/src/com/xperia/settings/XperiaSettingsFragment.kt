@@ -25,13 +25,6 @@ class XperiaSettingsFragment : PreferenceFragmentCompat() {
             "display", // categName
             "display_settings" // prefName
         )
-        // Audio
-        xperiaSettingsPackage.setupSettings(
-            "com.xperia.settings.audio", // packageName
-            "com.xperia.settings.audio.AudioSettingsActivity", // className
-            "sound", // categName
-            "audio_settings" // prefName
-        )
         // USB External Monitor
         xperiaSettingsPackage.setupSettings(
             "com.sonymobile.extmonitorapp", // packageName

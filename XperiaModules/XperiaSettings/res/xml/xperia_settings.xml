@@ -26,23 +26,6 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="sound"
-        android:title="@string/sound_title">
-
-        <Preference
-            android:key="audio_settings"
-            android:icon="@drawable/ic_audio_settings"
-            android:title="@string/audio_settings_title"
-            android:summary="@string/audio_settings_summary">
-            <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="com.xperia.settings.audio"
-                android:targetClass="com.xperia.settings.audio.AudioSettingsActivity" />
-        </Preference>
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="usb"
         android:title="@string/usb_title">
 
