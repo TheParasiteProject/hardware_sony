@@ -27,11 +27,9 @@ allow devicesetting_app system_app_data_file:{ file lnk_file } create_file_perms
 # Allow binder communication with gpuservice
 binder_call(devicesetting_app, gpuservice)
 
-# Allow devicesetting_app to read and write to cgroup/sysfs_leds/sysfs_thermal
-allow devicesetting_app sysfs_leds:dir search;
+# Allow devicesetting_app to read and write to cgroup/sysfs_thermal
 allow devicesetting_app {
     cgroup
-    sysfs_leds
     sysfs_thermal
     sysfs_kprofiles
 }:{ file lnk_file } rw_file_perms;
