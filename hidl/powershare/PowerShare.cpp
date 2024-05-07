@@ -19,6 +19,8 @@
 #include "PowerShare.h"
 
 #include <android-base/file.h>
+#include <android-base/logging.h>
+#include <android-base/strings.h>
 
 using ::android::base::ReadFileToString;
 using ::android::base::WriteStringToFile;
@@ -31,11 +33,28 @@ namespace implementation {
 
 Return<bool> PowerShare::isEnabled() {
     std::string value;
-    return ReadFileToString(WIRELESS_TX_ENABLE_PATH, &value) && value != "0\n";
+
+    // Read file and trim any whitespaces from value
+    auto ret = ReadFileToString(WIRELESS_TX_ENABLE_PATH, &value);
+    value = android::base::Trim(value);
+
+    LOG(INFO) << __func__ << ": wireless_tx_enable: " << value;
+
+    return ret && value != "0";
 }
 
 Return<bool> PowerShare::setEnabled(bool enable) {
-    return WriteStringToFile(enable ? "1" : "0", WIRELESS_TX_ENABLE_PATH, true);
+    // Log writing failures,
+    // but don't return early after that,
+    // as we will return result of isEnabled() anyways.
+    if (!WriteStringToFile(enable ? "1" : "0", WIRELESS_TX_ENABLE_PATH, true)) {
+        LOG(ERROR) << "Failed to write to file " << WIRELESS_TX_ENABLE_PATH << "!";
+    }
+
+    // Return result of isEnabled() to handle situations
+    // when reverse charging status changed
+    // by kernel or other hals after writing.
+    return isEnabled();
 }
 
 Return<uint32_t> PowerShare::getMinBattery() {
