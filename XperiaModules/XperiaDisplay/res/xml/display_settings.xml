@@ -18,6 +18,11 @@
             app:key="switchCreatorMode"
             android:title="@string/display_cm_enable"
             android:summary="@string/display_cm_summary" />
+
+        <com.android.settings.custom.preference.SecureSettingSwitchPreference
+            app:key="x_reality_engine_mode_enabled"
+            android:title="@string/display_xre_enable"
+            android:summary="@string/display_xre_summary" />
     </PreferenceCategory>
 
     <com.android.settingslib.widget.FooterPreference

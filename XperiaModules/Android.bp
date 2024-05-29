@@ -12,6 +12,7 @@ android_library {
         "androidx.core_core",
         "androidx.preference_preference",
         "SettingsLib",
+        "custom-preference",
     ],
 }
 
