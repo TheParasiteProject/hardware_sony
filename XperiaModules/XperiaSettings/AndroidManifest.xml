@@ -58,6 +58,9 @@
                 android:resource="@string/app_summary" />
             <meta-data android:name="com.android.settings.icon" 
                 android:resource="@drawable/ic_xperia_logo"/>
+            <meta-data
+                android:name="com.android.settings.profile"
+                android:value="primary_profile_only" />
         </activity>
 
     </application>
