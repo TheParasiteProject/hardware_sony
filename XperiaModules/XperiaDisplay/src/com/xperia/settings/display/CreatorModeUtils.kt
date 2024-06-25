@@ -5,8 +5,9 @@
 
 package com.xperia.settings.display
 
-import android.app.Activity
+import android.app.ActivityTaskManager
 import android.content.Context
+import android.os.RemoteException
 import android.provider.Settings
 import android.util.Log
 import android.view.View
@@ -15,6 +16,8 @@ import android.graphics.ColorMatrix
 import android.graphics.ColorMatrixColorFilter
 import androidx.core.content.ContextCompat
 import android.hardware.display.ColorDisplayManager
+import com.android.server.LocalServices;
+import com.android.server.display.color.DisplayTransformManager
 
 import vendor.semc.hardware.display.V2_0.IDisplay
 import vendor.semc.hardware.display.V2_0.IDisplayCallback
@@ -29,6 +32,11 @@ class CreatorModeUtils(private val context: Context) : IDisplayCallback.Stub() {
         service.setup()
         service
     }
+
+    /**
+     * Color transform level used by Creator Mode
+     */
+    private val LEVEL_COLOR_MATRIX_CREATOR_MODE = 569
 
     val isEnabled: Boolean
         get() = Settings.Secure.getInt(context.contentResolver, CREATOR_MODE_ENABLE, 0) != 0
@@ -63,20 +71,30 @@ class CreatorModeUtils(private val context: Context) : IDisplayCallback.Stub() {
     }
 
     override fun onWhiteBalanceMatrixChanged(matrix: PccMatrix) {
-        val colorMatrix: ColorMatrix = ColorMatrix().apply {
-            set(floatArrayOf(
-                    matrix.red, matrix.green, matrix.blue, 0f, 0f,
-                    matrix.red, matrix.green, matrix.blue, 0f, 0f,
-                    matrix.red, matrix.green, matrix.blue, 0f, 0f,
-                    0f, 0f, 0f, 1f, 0f
-            ))
+        try {
+            DisplayTransformManager.setColorMatrix(LEVEL_COLOR_MATRIX_CREATOR_MODE,
+                floatArrayOf(
+                        matrix.red, matrix.green, matrix.blue, 0f,
+                        matrix.red, matrix.green, matrix.blue, 0f,
+                        matrix.red, matrix.green, matrix.blue, 0f,
+                        0f, 0f, 0f, 1f
+                    ))
+        } catch (e: Exception) {
+            Log.e(TAG, "Could not apply setColorMatrix", e)
+            return;
         }
 
-        val filter = ColorMatrixColorFilter(colorMatrix)
+        updateConfiguration()
 
-        val views = (context as Activity).window.decorView
-        views.post { views.background.colorFilter = filter }
         Log.i(TAG, "New white balance: ${matrix.red}, ${matrix.green}, ${matrix.blue}")
+    }
+
+    fun updateConfiguration() {
+        try {
+            ActivityTaskManager.getService().updateConfiguration(null)
+        } catch (e: RemoteException) {
+            Log.e(TAG, "Could not update configuration", e)
+        }
     }
 
     companion object {
