@@ -12,11 +12,13 @@ BOARD_VENDOR_SEPOLICY_DIRS += \
 
 SYSTEM_EXT_PRIVATE_SEPOLICY_DIRS += \
     hardware/sony/sepolicy/qti/private \
-    hardware/sony/sepolicy/qti/private/$(SEPOLICY_PLATFORM)
+    hardware/sony/sepolicy/qti/private/$(SEPOLICY_PLATFORM) \
+    hardware/sony/XperiaModules/KProfiles/sepolicy/private
 
 SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += \
     hardware/sony/sepolicy/qti/public \
-    hardware/sony/sepolicy/qti/public/$(SEPOLICY_PLATFORM)
+    hardware/sony/sepolicy/qti/public/$(SEPOLICY_PLATFORM) \
+	hardware/sony/XperiaModules/KProfiles/sepolicy/public
 
 ifneq ($(SEPOLICY_PLATFORM), legacy-um)
 BOARD_VENDOR_SEPOLICY_DIRS += \
