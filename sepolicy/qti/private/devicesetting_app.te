@@ -1,15 +1,28 @@
 app_domain(devicesetting_app)
 
+typeattribute devicesetting_app mlstrustedsubject;
+
+# Access standard system services
+allow devicesetting_app app_api_service:service_manager find;
+
+# Allow devicesetting_app to find *_service
 allow devicesetting_app {
     activity_service
     activity_task_service
+    app_api_service
     audio_service
     autofill_service
+    cameraserver_service
     color_display_service
     content_capture_service
+    drmserver_service
     game_service
     gpu_service
     lineage_livedisplay_service
+    media_session_service
+    mediaextractor_service
+    mediametrics_service
+    mediaserver_service
     netstats_service
     surfaceflinger_service
     virtual_device_service
