@@ -25,9 +25,6 @@ TARGET_SUPPORTS_SONY_FRAMEWORKS ?= true
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)/XperiaModules
 
-# SEPolicy
-include hardware/sony/sepolicy/common/SEPolicy.mk
-
 # Main Module
 PRODUCT_PACKAGES += \
     XperiaSettings
