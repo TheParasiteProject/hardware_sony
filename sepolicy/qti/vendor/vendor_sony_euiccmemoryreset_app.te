@@ -7,3 +7,4 @@ binder_call(priv_app, vendor_hal_miscta_default)
 allow vendor_sony_euiccmemoryreset_app activity_service:service_manager find;
 allow vendor_sony_euiccmemoryreset_app content_capture_service:service_manager find;
 allow vendor_sony_euiccmemoryreset_app vendor_hal_miscta_service:service_manager find;
+binder_call(vendor_sony_euiccmemoryreset_app, vendor_hal_miscta_default)
