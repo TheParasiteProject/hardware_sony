@@ -9,6 +9,10 @@ genfscon sysfs /devices/platform/soc/4a80000.i2c/i2c-3/3-0049/power_supply/pc_po
 genfscon sysfs /devices/platform/soc/4a80000.i2c/i2c-3/3-0049/power_supply/sm5038-otg u:object_r:vendor_sysfs_usb_supply:s0
 genfscon sysfs /devices/platform/soc/4c84000.i2c/i2c-0/0-0033/power_supply/usb u:object_r:vendor_sysfs_usb_supply:s0
 
+# Filesystem discard size
+genfscon sysfs /class/block/dm-43/queue/discard_max_bytes u:object_r:sysfs_discard_max_bytes:s0
+genfscon sysfs /class/block/sda/queue/discard_max_bytes u:object_r:sysfs_discard_max_bytes:s0
+
 # Wakeups
 genfscon sysfs /devices/platform/soc/0.sony,camera_modules/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/1.sony,camera_modules/wakeup u:object_r:sysfs_wakeup:s0
