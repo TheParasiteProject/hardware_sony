@@ -5,6 +5,10 @@ genfscon sysfs /devices/platform/soc/98c000.i2c/i2c-2/2-003b/power_supply/wirele
 genfscon sysfs /class/battchg_ext u:object_r:sysfs_battchg_ext:s0
 genfscon sysfs /class/battman_dbg u:object_r:sysfs_battchg_ext:s0
 
+# Filesystem discard size
+genfscon sysfs /class/block/dm-43/queue/discard_max_bytes u:object_r:sysfs_discard_max_bytes:s0
+genfscon sysfs /class/block/sda/queue/discard_max_bytes u:object_r:sysfs_discard_max_bytes:s0
+
 # Wakeups
 genfscon sysfs /devices/0306_02.01.00/wakeup u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/platform/soc/0.sony,camera_modules/wakeup u:object_r:sysfs_wakeup:s0
