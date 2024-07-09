@@ -1,5 +1,6 @@
 allow init { idd_root_dir idd_rca_dir }:dir mounton;
 
+allow init sysfs_discard_max_bytes:file rw_file_perms;
 allow init sysfs_dm:file setattr;
 allow init sysfs_tsp:file rw_file_perms;
 allow init vendor_sysfs_cpu_boost:{ file lnk_file } rw_file_perms;
