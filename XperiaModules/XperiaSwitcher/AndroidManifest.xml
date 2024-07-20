@@ -24,8 +24,9 @@
         android:label="@string/app_name"
         android:persistent="true"
         android:defaultToDeviceProtectedStorage="true"
-        android:directBootAware="true">
-        
+        android:directBootAware="true"
+        android:enableOnBackInvokedCallback="true">
+
         <service
             android:name=".RefreshRateTileService"
             android:icon="@drawable/ic_refresh_rate"

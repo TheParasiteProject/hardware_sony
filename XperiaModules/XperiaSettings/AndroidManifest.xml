@@ -27,7 +27,8 @@
 
     <application
         android:label="@string/app_name"
-        android:persistent="true">
+        android:persistent="true"
+        android:enableOnBackInvokedCallback="true">
 
         <receiver android:name=".BootCompletedReceiver"
                   android:exported="false">
@@ -42,11 +43,11 @@
             android:authorities="${applicationId}.androidx-startup"
             tools:replace="android:authorities"/>
 
-    <activity
-        android:name=".XperiaSettingsActivity"
-        android:label="@string/app_name"
-        android:exported="false"
-        android:theme="@style/Theme.SubSettingsBase">
+        <activity
+            android:name=".XperiaSettingsActivity"
+            android:label="@string/app_name"
+            android:exported="false"
+            android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
