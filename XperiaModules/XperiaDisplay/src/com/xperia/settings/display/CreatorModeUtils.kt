@@ -51,11 +51,11 @@ class CreatorModeUtils(private val context: Context) : IDisplayCallback.Stub() {
                 semcDisplayService.set_color_mode(1)
             }
 
-            // Register itself as callback for HIDL
-            semcDisplayService.registerCallback(this)
-    
             // Don't apply anything if the setting is disabled
             if (isEnabled) {
+                // Register itself as callback for HIDL
+                semcDisplayService.registerCallback(this)
+
                 setMode(true)
             }
         } catch (e: Exception) {
