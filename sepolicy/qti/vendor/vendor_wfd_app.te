@@ -1,0 +1,2 @@
+#Wifi Display
+get_prop(vendor_wfd_app, vendor_video_prop)
