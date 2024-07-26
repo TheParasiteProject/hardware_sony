@@ -1,0 +1,3 @@
+#Wifi Display
+get_prop(vendor_wfdservice, vendor_wfd_sys_debug_prop)
+get_prop(vendor_wfdservice, vendor_wfd_sys_prop)
