@@ -1,0 +1,2 @@
+#Wifi Display
+get_prop(system_server, vendor_video_prop)

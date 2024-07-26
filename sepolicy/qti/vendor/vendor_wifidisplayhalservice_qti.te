@@ -1,0 +1,2 @@
+#Wifi Display
+allow vendor_wifidisplayhalservice_qti vendor_media_data_file:dir { search };
