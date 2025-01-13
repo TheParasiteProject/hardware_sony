@@ -62,6 +62,13 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.semc.hardware.spc</name>
+        <interface>
+            <name>ISpc</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="hidl" optional="true">
        <name>vendor.semc.system.idd</name>
        <version>1.0-1</version>
