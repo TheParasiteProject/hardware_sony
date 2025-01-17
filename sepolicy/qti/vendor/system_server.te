@@ -1,2 +1,4 @@
 #Wifi Display
 get_prop(system_server, vendor_video_prop)
+
+hal_client_domain(system_server, hal_dms)

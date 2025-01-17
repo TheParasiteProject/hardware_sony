@@ -105,3 +105,9 @@
 /dev/sda    u:object_r:tee_device:s0
 /dev/sdb    u:object_r:tee_device:s0
 /dev/sdc    u:object_r:tee_device:s0
+
+# 360 RA Data file
+/data/vendor/360ra(/.*)? u:object_r:threesixtyra_vendor_data_file:s0
+
+# 360 RA HAL
+/vendor/bin/hw/android\.hardware\.media\.c2@1\.0-threesixty-ra-service u:object_r:mediacodec_exec:s0
