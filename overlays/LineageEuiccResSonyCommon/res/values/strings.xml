@@ -4,8 +4,6 @@
     SPDX-License-Identifier: Apache-2.0
 -->
 <resources>
-    <string name="carrier_list_json"  translatable="false" />
-    <string name="default_smdp_override"  translatable="false" />
     <string name="sim_slot_mappings_json" translatable="false">
         {
             \"sim-slot-mappings\": [
