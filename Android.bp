@@ -1,3 +1,10 @@
 soong_namespace {
     imports: ["hardware/qcom-caf/bootctrl"],
 }
+
+install_symlink {
+	name: "libmepstarterjni_SomcMediaExtensionProviderStarter_symlink64",
+	product_specific: true,
+	installed_location: "app/SomcMediaExtensionProviderStarter/lib/arm64/libmepstarterjni.so",
+	symlink_target: "/product/lib64/libmepstarterjni.so",
+}
