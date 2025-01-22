@@ -7,3 +7,5 @@ init_daemon_domain(vendor_hal_spc_default)
 binder_use(vendor_hal_spc_default)
 
 get_prop(vendor_hal_spc_default, vendor_tee_listener_prop)
+
+rw_dir_file(vendor_hal_spc_default, tad_socket)
