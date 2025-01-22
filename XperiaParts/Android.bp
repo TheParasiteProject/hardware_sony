@@ -30,5 +30,16 @@ android_app {
     optimize: {
         proguard_flags_files: ["proguard.flags"],
     },
+
+    required: [
+        "preinstalled-packages-platform-org.lineageos.settings.device",
+    ],
 }
 
+prebuilt_etc {
+    name: "preinstalled-packages-platform-org.lineageos.settings.device",
+    sub_dir: "sysconfig",
+    src: "preinstalled-packages-platform-org.lineageos.settings.device.xml",
+    system_ext_specific: true,
+    filename_from_src: true,
+}
