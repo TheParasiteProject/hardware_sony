@@ -41,6 +41,13 @@
         </interface>
     </hal>
     <hal format="aidl" optional="true">
+        <name>vendor.semc.hardware.extlight</name>
+        <interface>
+            <name>IExtLight</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
         <name>vendor.semc.hardware.fingerprint</name>
         <interface>
             <name>IFingerprintDiagnostic</name>
@@ -110,13 +117,6 @@
         <version>1.0</version>
         <interface>
             <name>IHidlSwiqi</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.semc.hardware.extlight</name>
-        <interface>
-            <name>IExtLight</name>
             <instance>default</instance>
         </interface>
     </hal>
