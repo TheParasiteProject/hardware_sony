@@ -1,0 +1,8 @@
+binder_call(hal_audio_default, system_app)
+binder_call(hal_bootctl_default, system_app)
+binder_call(hal_camera_default, system_app)
+binder_call(hal_fingerprint_default, system_app)
+binder_call(hal_health_default, system_app)
+binder_call(hal_memtrack_default, system_app)
+binder_call(hal_power_default, system_app)
+binder_call(vendor_hal_gnss_qti, system_app)
