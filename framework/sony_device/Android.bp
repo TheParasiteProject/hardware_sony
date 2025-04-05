@@ -10,13 +10,13 @@ java_library {
     product_specific: true,
     sdk_version: "current",
     srcs: ["src/**/*.java"],
-    required: ["com.sony.device.xml"]
+    required: ["com.sony.device.xml"],
 }
 
 prebuilt_etc {
     name: "com.sony.device.xml",
     product_specific: true,
-    sub_dir: "permissions",
+    relative_install_path: "permissions",
     src: "com.sony.device.xml",
     filename_from_src: true,
 }

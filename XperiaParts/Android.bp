@@ -3,7 +3,6 @@ android_app {
     defaults: ["SettingsLibDefaults"],
 
     srcs: ["src/**/*.kt"],
-    resource_dirs: ["res"],
 
     certificate: "platform",
     platform_apis: true,
@@ -16,11 +15,10 @@ android_app {
         "org.lineageos.platform.internal",
         "vendor.semc.hardware.display-V2.0-java",
         "vendor.semc.hardware.display-V2.1-java",
-        "vendor.semc.hardware.display-V2.2-java"
+        "vendor.semc.hardware.display-V2.2-java",
     ],
 
     optimize: {
         proguard_flags_files: ["proguard.flags"],
     },
 }
-
