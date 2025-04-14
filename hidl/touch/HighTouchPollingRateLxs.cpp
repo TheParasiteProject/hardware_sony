@@ -55,7 +55,7 @@ Return<bool> HighTouchPollingRate::setEnabled(bool enabled) {
         result = send_cmd(kPanelFrameRatePath, TOUCH_RATE_PREFIX "2");
 
     if (!result) {
-        LOG(ERROR) << "Failed to write sec_ts cmd!";
+        LOG(ERROR) << "Failed to write lxs_ts frame_rate_np!";
         return false;
     }
     return true;
