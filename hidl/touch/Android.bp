@@ -23,39 +23,6 @@ filegroup {
     srcs: ["HighTouchPollingRateLxs.cpp"],
 }
 
-soong_config_module_type {
-    name: "sony_lineage_touch_hal_cc_defaults",
-    module_type: "cc_defaults",
-    config_namespace: "sony_touch",
-    variables: ["panel"],
-    properties: ["srcs"],
-}
-
-soong_config_string_variable {
-    name: "panel",
-    values: [
-        "sec_ts",
-        "lxs_ts",
-    ],
-}
-
-sony_lineage_touch_hal_cc_defaults {
-    name: "sony_touch_hal_path_defaults",
-    soong_config_variables: {
-        panel: {
-            sec_ts: {
-                srcs: [":vendor.lineage.touch@1.0-sony-hightouchpollingrates_sec"],
-            },
-            lxs_ts: {
-                srcs: [":vendor.lineage.touch@1.0-sony-hightouchpollingrates_lxs"],
-            },
-            conditions_default: {
-                srcs: [":vendor.lineage.touch@1.0-sony-hightouchpollingrates_sec"],
-            },
-        },
-    },
-}
-
 cc_library_headers {
     name: "vendor.lineage.touch@1.0-sony-headers",
     vendor_available: true,
@@ -64,14 +31,15 @@ cc_library_headers {
 
 cc_defaults {
     name: "sony_touch_hal_defaults",
-    defaults: [
-        "hidl_defaults",
-        "sony_touch_hal_path_defaults",
-    ],
+    defaults: ["hidl_defaults"],
     relative_install_path: "hw",
     srcs: [
         "service.cpp",
-    ],
+    ] + select(soong_config_variable("sony_touch", "panel"), {
+        "lxs_ts": [":vendor.lineage.touch@1.0-sony-hightouchpollingrates_lxs"],
+        "sec_ts": [":vendor.lineage.touch@1.0-sony-hightouchpollingrates_sec"],
+        default: [":vendor.lineage.touch@1.0-sony-hightouchpollingrates_sec"],
+    }),
     shared_libs: [
         "libbase",
         "libbinder",
