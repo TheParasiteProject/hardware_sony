@@ -15,6 +15,7 @@
     <application
         android:label="@string/app_name"
         android:persistent="true"
+        android:icon="@mipmap/ic_launcher"
         android:defaultToDeviceProtectedStorage="true"
         android:directBootAware="true"
         android:enableOnBackInvokedCallback="true">
