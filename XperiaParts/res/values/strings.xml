@@ -2,7 +2,7 @@
     <string name="app_name" translatable="false">XperiaParts</string>
 
     <!-- Display Related Settings -->
-    <string name="display_setting_header">Advanced Display Setting</string>
+    <string name="display_setting_header">Xperia Display Setting</string>
     <string name="display_setting_summary">Adjust various display settings</string>
 
     <!-- Display Settings -->
