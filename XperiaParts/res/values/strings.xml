@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">XperiaParts</string>
+    <string name="app_name" translatable="false">Xperia Settings</string>
 
     <!-- Display Related Settings -->
     <string name="display_setting_header">Xperia Display Setting</string>
