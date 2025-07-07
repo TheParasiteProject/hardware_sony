@@ -16,6 +16,7 @@ android_app {
         "org.lineageos.settings.resources",
         "org.lineageos.platform.internal",
         "SettingsLib",
+        "SettingsLibSettingsTheme",
         "vendor.semc.hardware.display-V2.0-java",
         "vendor.semc.hardware.display-V2.1-java",
         "vendor.semc.hardware.display-V2.2-java",
