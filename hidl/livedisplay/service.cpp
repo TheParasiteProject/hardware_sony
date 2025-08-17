@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019-2021 The LineageOS Project
+ * Copyright (C) 2019-2025 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,8 @@
 #include <android-base/logging.h>
 #include <binder/ProcessState.h>
 #include <hidl/HidlTransportSupport.h>
-#include <livedisplay/sony/SunlightEnhancement.h>
 #include <livedisplay/sdm/PictureAdjustment.h>
+#include <livedisplay/sony/SunlightEnhancement.h>
 #include <vendor/lineage/livedisplay/2.1/IPictureAdjustment.h>
 
 using ::android::OK;
