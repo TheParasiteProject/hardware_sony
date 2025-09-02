@@ -19,6 +19,7 @@ import androidx.viewpager.widget.ViewPager
 
 import com.android.internal.util.ArrayUtils
 import com.android.settingslib.widget.LayoutPreference
+import com.android.settingslib.widget.SettingsBasePreferenceFragment
 
 import java.util.*
 import kotlin.collections.ArrayList
@@ -27,7 +28,7 @@ import org.lineageos.settings.device.R
 
 const val CREATOR_MODE_KEY = "switchCreatorMode"
 
-class DisplaySettingsFragment : PreferenceFragmentCompat(), Preference.OnPreferenceChangeListener {
+class DisplaySettingsFragment : SettingsBasePreferenceFragment(), Preference.OnPreferenceChangeListener {
     private lateinit var creatorModeUtils: CreatorModeUtils
 
     companion object {
