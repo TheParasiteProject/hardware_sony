@@ -27,7 +27,7 @@ import org.lineageos.settings.device.R
 
 const val CREATOR_MODE_KEY = "switchCreatorMode"
 
-class DisplaySettingsFragment : PreferenceFragment(), Preference.OnPreferenceChangeListener {
+class DisplaySettingsFragment : PreferenceFragmentCompat(), Preference.OnPreferenceChangeListener {
     private lateinit var creatorModeUtils: CreatorModeUtils
 
     companion object {
@@ -50,8 +50,8 @@ class DisplaySettingsFragment : PreferenceFragment(), Preference.OnPreferenceCha
 
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
-        addPreferencesFromResource(R.xml.advanced_disp_settings)
-        creatorModeUtils = CreatorModeUtils(context)
+        setPreferencesFromResource(R.xml.advanced_disp_settings, rootKey)
+        creatorModeUtils = CreatorModeUtils(requireContext())
 
         addViewPager()
 
@@ -114,7 +114,7 @@ class DisplaySettingsFragment : PreferenceFragment(), Preference.OnPreferenceCha
         val viewGroup = preview.findViewById<ViewGroup>(R.id.viewGroup)
         mDotIndicators = arrayOfNulls(mPageList!!.size)
         for (i in mPageList!!.indices) {
-            val imageView = ImageView(context)
+            val imageView = ImageView(requireContext())
             val lp = ViewGroup.MarginLayoutParams(DOT_INDICATOR_SIZE, DOT_INDICATOR_SIZE)
             lp.setMargins(DOT_INDICATOR_LEFT_PADDING, 0, DOT_INDICATOR_RIGHT_PADDING, 0)
             imageView.layoutParams = lp
@@ -135,7 +135,7 @@ class DisplaySettingsFragment : PreferenceFragment(), Preference.OnPreferenceCha
                     }
                 } else {
                     mViewPagerImages!![position]!!.contentDescription =
-                    getContext().getString(R.string.creator_mode_content_description)
+                    requireContext().getString(R.string.creator_mode_content_description)
                     updateIndicator(position)
                 }
             }
