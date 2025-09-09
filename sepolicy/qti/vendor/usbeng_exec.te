@@ -1,0 +1,5 @@
+typeattribute usbeng coredomain;
+typeattribute usbeng mlstrustedsubject;
+
+allow usbeng vendor_hal_miscta_service:service_manager find;
+binder_call(usbeng, vendor_hal_miscta_default)

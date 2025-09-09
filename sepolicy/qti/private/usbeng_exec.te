@@ -1,0 +1,13 @@
+typeattribute usbeng coredomain;
+typeattribute usbeng mlstrustedsubject;
+
+type usbeng_exec, exec_type, system_file_type, file_type;
+system_restricted_prop(usb_eng_prop)
+
+init_daemon_domain(usbeng)
+
+binder_call(usbeng, servicemanager)
+
+allow usbeng usbeng_exec:file rx_file_perms;
+
+get_prop(usbeng, usb_eng_prop)

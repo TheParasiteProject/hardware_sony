@@ -1,0 +1,2 @@
+# Executable
+/(system|system_ext|system/system_ext)/bin/usbeng   u:object_r:usbeng_exec:s0
