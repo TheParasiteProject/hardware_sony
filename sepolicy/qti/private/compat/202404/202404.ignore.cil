@@ -8,4 +8,6 @@
     devicesetting_app
     display_brightness_prop
     usbeng
-    usbeng_exec))
+    usbeng_exec
+    vendor_sysfs_leds
+    ))
