@@ -2,3 +2,25 @@
 get_prop(system_server, vendor_video_prop)
 
 hal_client_domain(system_server, hal_dms)
+
+# Allow getattr on various proc files
+allow system_server { 
+  proc
+  proc_bootconfig
+  proc_buddyinfo
+  proc_cgroups
+  proc_diskstats
+  proc_interrupts
+  proc_iomem
+  proc_misc
+  proc_swaps
+  proc_uptime
+  proc_zoneinfo
+}:file getattr;
+
+dontaudit system_server { 
+  proc_kallsyms
+  proc_keys
+  proc_kmsg
+  proc_slabinfo 
+}:file getattr;

@@ -1,2 +1,4 @@
 # Kernel needs to read the zram writeback files
 allow kernel system_data_file:file r_file_perms;
+
+dontaudit kernel mnt_vendor_file:dir search;
