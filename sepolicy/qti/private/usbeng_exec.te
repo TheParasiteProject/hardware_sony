@@ -11,3 +11,4 @@ binder_call(usbeng, servicemanager)
 allow usbeng usbeng_exec:file rx_file_perms;
 
 get_prop(usbeng, usb_eng_prop)
+get_prop(vendor_init, usb_eng_prop)
