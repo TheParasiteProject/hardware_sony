@@ -17,3 +17,4 @@ allow keyprovd tee_device:chr_file rw_file_perms;
 
 get_prop(keyprovd, vendor_tee_listener_prop)
 get_prop(keyprovd, hwservicemanager_prop)
+set_prop(keyprovd, vendor_sdm_prop)
