@@ -1,0 +1,5 @@
+allow {
+    devicesetting_app
+    threesixtyra_app
+    vendor_sony_euiccmemoryreset_app
+} vendor_hal_perf2_service:service_manager { find };
