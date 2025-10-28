@@ -1,2 +1,3 @@
 allow vendor_location_slim_daemon fwk_sensor_service:service_manager { find };
 binder_call(vendor_location_slim_daemon, servicemanager)
+binder_call(servicemanager, vendor_location_slim_daemon)
