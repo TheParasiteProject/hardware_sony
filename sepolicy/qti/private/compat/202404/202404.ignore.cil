@@ -10,4 +10,6 @@
     usbeng
     usbeng_exec
     vendor_sysfs_leds
+    threesixtyra_app
+    vendor_sony_euiccmemoryreset_app
     ))
