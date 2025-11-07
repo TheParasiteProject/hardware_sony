@@ -6,5 +6,73 @@
 <resources>
     <string name="carrier_list_json"  translatable="false" />
     <string name="default_smdp_override"  translatable="false" />
-    <string name="sim_slot_mappings_json" translatable="false">{ \"sim-slot-mappings\":[ { \"devices\":[\"yodo_cdb\",\"XQ-DQ54\",\"ALGL2GG\",\"XQ-DQ04\",\"MN424MC\",\"XQ-DQ44\",\"APJJA44\",\"XQ-DQ14\",\"2PD44D2\",\"XQ-DQ24\",\"B23232N\",\"XQ-DQ72\",\"C3B4B2G\",\"XQ-DQ62\",\"SA422A3\",\"SO-51D\",\"SOG10\",\"QDB\",\"A301SO\",\"XQ-DE14\",\"9092D22\",\"XQ-DE04\",\"M4C4MMM\",\"XQ-DE24\",\"MB223BB\",\"XQ-DE44\",\"E4PR209\",\"XQ-DE54\",\"92U2932\",\"XQ-DE62\",\"200S02U\",\"XQ-DE72\",\"IC2244N\",\"XQ-CC54\",\"XQ-CC72\",\"XQ-CC44\",\"SO-52C\",\"8G443Y4\",\"SOG07\",\"UAK\",\"A202SO\",\"XQ-DC54\",\"SAX2FLO\",\"SO-52D\",\"ZIF0TG3\",\"XQ-DC44\",\"6JU05Y4\",\"SOG11\",\"REZ\",\"A302SO\",\"L9R6PVY\",\"XQ-DC72\",\"J72BYI6\"], \"esim-slot-ids\":[1], \"psim-slot-ids\":[0] } ] }</string>
+    <string name="sim_slot_mappings_json" translatable="false">
+        {
+            \"sim-slot-mappings\": [
+                {
+                    \"devices\": [
+                        \"200S02U\",
+                        \"2PD44D2\",
+                        \"6JU05Y4\",
+                        \"8G443Y4\",
+                        \"9092D22\",
+                        \"92U2932\",
+                        \"A202SO\",
+                        \"A301SO\",
+                        \"A302SO\",
+                        \"ALGL2GG\",
+                        \"APJJA44\",
+                        \"B23232N\",
+                        \"C3B4B2G\",
+                        \"E4PR209\",
+                        \"IC2244N\",
+                        \"J72BYI6\",
+                        \"L9R6PVY\",
+                        \"M4C4MMM\",
+                        \"MB223BB\",
+                        \"MN424MC\",
+                        \"QDB\",
+                        \"REZ\",
+                        \"SA422A3\",
+                        \"SAX2FLO\",
+                        \"SO-51D\",
+                        \"SO-52C\",
+                        \"SO-52D\",
+                        \"SOG07\",
+                        \"SOG10\",
+                        \"SOG11\",
+                        \"UAK\",
+                        \"XQ-CC44\",
+                        \"XQ-CC54\",
+                        \"XQ-CC72\",
+                        \"XQ-DC44\",
+                        \"XQ-DC54\",
+                        \"XQ-DC72\",
+                        \"XQ-DE04\",
+                        \"XQ-DE14\",
+                        \"XQ-DE24\",
+                        \"XQ-DE44\",
+                        \"XQ-DE54\",
+                        \"XQ-DE62\",
+                        \"XQ-DE72\",
+                        \"XQ-DQ04\",
+                        \"XQ-DQ14\",
+                        \"XQ-DQ24\",
+                        \"XQ-DQ44\",
+                        \"XQ-DQ54\",
+                        \"XQ-DQ62\",
+                        \"XQ-DQ72\",
+                        \"yodo_cdb\",
+                        \"ZIF0TG3\"
+                    ],
+                    \"esim-slot-ids\": [
+                        1
+                    ],
+                    \"psim-slot-ids\": [
+                        0
+                    ]
+                }
+            ]
+        }
+    </string>
 </resources>
