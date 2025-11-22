@@ -1,5 +1,5 @@
 allow hal_audio_default vendor_hal_miscta_default:binder call;
-allow hal_audio_default vendor_hal_secd_hwservice:binder call;
+allow hal_audio_default vendor_hal_secd:binder call;
 
 allow hal_audio_default vendor_hal_miscta_hwservice:hwservice_manager find;
 allow hal_audio_default vendor_hal_secd_hwservice:hwservice_manager find;
